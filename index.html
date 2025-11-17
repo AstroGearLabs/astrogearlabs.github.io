@@ -6,18 +6,135 @@
     <title>AstroGear Labs</title>
     <style>
         body {
-            background: #0d0d0d;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 15%;
+            margin: 0;
+            padding: 0;
+            background: #050505;
+            color: #d0d0d0;
+            font-family: "Trebuchet MS", sans-serif;
+            overflow-x: hidden;
         }
-        h1 { font-size: 3em; }
-        p { font-size: 1.3em; color: #aaaaaa; }
+
+        /* Neon glow accent color */
+        :root {
+            --accent: #26b0ff;
+        }
+
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            padding: 0 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at top, #0d1a24 0%, #050505 70%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(38,176,255,0.6);
+        }
+
+        p.subtext {
+            font-size: 1.4rem;
+            color: #9eccec;
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+        .divider {
+            width: 140px;
+            height: 3px;
+            background: var(--accent);
+            margin: 30px auto;
+            box-shadow: 0 0 15px rgba(38,176,255,0.8);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mission, .projects {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(38,176,255,0.08);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            background: #050505;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Glow hover link */
+        a:hover {
+            text-shadow: 0 0 8px var(--accent);
+        }
     </style>
 </head>
+
 <body>
-    <h1>AstroGear Labs</h1>
-    <p>Robotics & AI — Coming Soon</p>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>AstroGear Labs</h1>
+        <p class="subtext">Advanced Robotics & Artificial Intelligence for the Next Frontier</p>
+        <div class="divider"></div>
+    </div>
+
+    <!-- MISSION SECTION -->
+    <section>
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                AstroGear Labs is dedicated to creating intelligent, adaptable robotics systems designed 
+                for exploration, automation, and advanced engineering challenges.  
+                From real-world robotics like <strong>Alfred 1</strong> to long-term autonomous 
+                space-mechanic concepts, our goal is to merge innovation, AI, and practical engineering 
+                to push what robotics can achieve.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section>
+        <div class="projects">
+            <h2>Current Projects</h2>
+            <p><strong>Alfred 1:</strong> A personal robotics platform integrating ROS 2, real-time navigation,  
+                motor control, sensors, embedded hardware, and multi-device coordination.</p>
+            <p>More systems are in development, including multi-agent robotics concepts and 
+                advanced control architectures.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 AstroGear Labs — All Rights Reserved  
+        ·  
+        <a href="mailto:info@astrogearlabs.com">info@astrogearlabs.com</a>
+    </footer>
+
 </body>
 </html>
