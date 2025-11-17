@@ -31,12 +31,12 @@
             background: radial-gradient(circle at top, #0d1a24 0%, #050505 70%);
         }
 
-        h1 {
-            font-size: 4rem;
-            margin: 0;
-            letter-spacing: 3px;
-            color: var(--accent);
-            text-shadow: 0 0 20px rgba(38,176,255,0.6);
+        /* Logo styling */
+        .logo {
+            width: 260px;
+            max-width: 80%;
+            filter: drop-shadow(0 0 12px rgba(38,176,255,0.5));
+            margin-bottom: 20px;
         }
 
         p.subtext {
@@ -54,7 +54,6 @@
             box-shadow: 0 0 15px rgba(38,176,255,0.8);
         }
 
-        /* Sections */
         section {
             padding: 80px 10%;
             max-width: 900px;
@@ -89,7 +88,6 @@
             text-decoration: none;
         }
 
-        /* Glow hover link */
         a:hover {
             text-shadow: 0 0 8px var(--accent);
         }
@@ -100,7 +98,9 @@
 
     <!-- HERO -->
     <div class="hero">
-        <h1>AstroGear Labs</h1>
+        <!-- LOGO REPLACES TEXT HERE -->
+        <img src="logo.png" alt="AstroGear Labs Logo" class="logo">
+
         <p class="subtext">Advanced Robotics & Artificial Intelligence for the Next Frontier</p>
         <div class="divider"></div>
     </div>
