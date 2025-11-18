@@ -14,9 +14,39 @@
             overflow-x: hidden;
         }
 
-        /* Neon glow accent color */
         :root {
             --accent: #26b0ff;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-end;
+            background: rgba(5,5,5,0.85);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid #0f2a3b;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: var(--accent);
+            margin-left: 30px;
+            font-size: 1rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(38,176,255,0.6);
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover {
+            text-shadow: 0 0 12px rgba(38,176,255,1);
+            color: white;
         }
 
         /* Hero section */
@@ -31,12 +61,12 @@
             background: radial-gradient(circle at top, #0d1a24 0%, #050505 70%);
         }
 
-        /* Logo styling */
         .logo {
             width: 260px;
             max-width: 80%;
             filter: drop-shadow(0 0 12px rgba(38,176,255,0.5));
             margin-bottom: 20px;
+            margin-top: 50px; /* pushes logo down so nav bar doesn't overlap */
         }
 
         p.subtext {
@@ -83,12 +113,12 @@
             background: #050505;
         }
 
-        a {
+        footer a {
             color: var(--accent);
             text-decoration: none;
         }
 
-        a:hover {
+        footer a:hover {
             text-shadow: 0 0 8px var(--accent);
         }
     </style>
@@ -96,17 +126,23 @@
 
 <body>
 
-    <!-- HERO -->
-    <div class="hero">
-        <!-- LOGO REPLACES TEXT HERE -->
-        <img src="logo.png" alt="AstroGear Labs Logo" class="logo">
+    <!-- NAVIGATION BAR -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#mission">About</a>
+        <a href="mailto:info@astrogearlabs.com">Contact</a>
+    </div>
 
+    <!-- HERO -->
+    <div class="hero" id="home">
+        <img src="logo.png" alt="AstroGear Labs Logo" class="logo">
         <p class="subtext">Advanced Robotics & Artificial Intelligence for the Next Frontier</p>
         <div class="divider"></div>
     </div>
 
-    <!-- MISSION SECTION -->
-    <section>
+    <!-- MISSION -->
+    <section id="mission">
         <div class="mission">
             <h2>Our Mission</h2>
             <p>
@@ -119,8 +155,8 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section>
+    <!-- PROJECTS -->
+    <section id="projects">
         <div class="projects">
             <h2>Current Projects</h2>
             <p><strong>Alfred 1:</strong> A personal robotics platform integrating ROS 2, real-time navigation,  
