@@ -18,7 +18,7 @@
             --accent: #26b0ff;
         }
 
-        /* Navigation Bar */
+        /* NAVBAR CONTAINER */
         .navbar {
             position: fixed;
             top: 0;
@@ -28,15 +28,21 @@
             box-sizing: border-box;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             background: rgba(5,5,5,0.85);
             backdrop-filter: blur(6px);
             border-bottom: 1px solid #0f2a3b;
             z-index: 1000;
         }
 
-        .navbar a {
+        /* NAVBAR LINKS */
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
             color: var(--accent);
-            margin-left: 30px;
             font-size: 1rem;
             text-decoration: none;
             letter-spacing: 1px;
@@ -44,9 +50,69 @@
             transition: 0.3s ease;
         }
 
-        .navbar a:hover {
+        .nav-links a:hover {
             text-shadow: 0 0 12px rgba(38,176,255,1);
             color: white;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 2px;
+            box-shadow: 0 0 6px rgba(38,176,255,0.8);
+            transition: 0.4s;
+        }
+
+        /* MOBILE MENU (HIDDEN BY DEFAULT) */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            text-align: right;
+            background: rgba(0,0,0,0.9);
+            padding: 20px 40px;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            border-left: 1px solid #0f2a3b;
+            border-bottom: 1px solid #0f2a3b;
+            z-index: 999;
+        }
+
+        .mobile-menu a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu a:hover {
+            text-shadow: 0 0 12px rgba(38,176,255,1);
+            color: white;
+        }
+
+        /* SHOW MOBILE MENU */
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        /* RESPONSIVE BEHAVIOR */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
         }
 
         /* Hero section */
@@ -66,7 +132,7 @@
             max-width: 80%;
             filter: drop-shadow(0 0 12px rgba(38,176,255,0.5));
             margin-bottom: 20px;
-            margin-top: 50px; /* pushes logo down so nav bar doesn't overlap */
+            margin-top: 60px; 
         }
 
         p.subtext {
@@ -128,10 +194,27 @@
 
     <!-- NAVIGATION BAR -->
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#mission">About</a>
-        <a href="mailto:info@astrogearlabs.com">Contact</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#mission">About</a>
+            <a href="mailto:info@astrogearlabs.com">Contact</a>
+        </div>
+
+        <!-- HAMBURGER ICON -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="#mission" onclick="toggleMenu()">About</a>
+        <a href="mailto:info@astrogearlabs.com" onclick="toggleMenu()">Contact</a>
     </div>
 
     <!-- HERO -->
@@ -171,6 +254,14 @@
         ·  
         <a href="mailto:info@astrogearlabs.com">info@astrogearlabs.com</a>
     </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("open");
+        }
+    </script>
 
 </body>
 </html>
